@@ -6,6 +6,7 @@ import "../../../../node_modules/uikit/dist/js/uikit-icons";
 //import NavigationItems from "../NavigationItems/NavigationItems";
 import DrawerToggle from "./DrawerToggle/DrawerToggle";
 import classes from './Toolbar.module.css';
+import Logo from '../../Logo/Logo';
 
 const toolbar = ( props ) => {
 
@@ -38,6 +39,10 @@ const toolbar = ( props ) => {
                     </Navbar>
                 </NavbarContainer>
             </NavbarSticky>
+
+            <div className={classes.Logo}>
+                <Logo/>
+            </div>
 
         </header>
     );
