@@ -22,7 +22,7 @@ const toolbar = ( props ) => {
                     <Navbar>
                         <ListItem>
                             <NavLink to='/login'>
-                                Log in
+                                {props.authenticated ? "Log out" : "Log in"}
                             </NavLink>
                         </ListItem>
                         <ListItem>

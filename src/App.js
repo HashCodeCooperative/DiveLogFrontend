@@ -15,12 +15,21 @@ class App extends Component {
   state={
     authenticated: false
   }
+
+  authenticationHandler = () => {
+    const auth = this.state.authenticated;
+    this.setState({authenticated: !auth});
+  }
   
   render() {
     return (
-      <Layout>
+      <Layout authenticated={this.state.authenticated}>
           <Switch>
-            <Route exact path='/login' component={Login}/>
+            <Route exact path='/login'> 
+              <Login 
+                authenticated={this.state.authenticated}
+                authenticationHandler={this.authenticationHandler}/>
+            </Route>
             <Route exact path='/dives' component={Logbook}/>
             <Route exact path='/add' component={LogADive}/>
           </Switch>

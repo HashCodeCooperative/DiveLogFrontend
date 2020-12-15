@@ -7,26 +7,18 @@ import Aux from '../../hoc/Aux/Aux';
 
 class Login extends Component {
 
-    state={
-        authenticated: false
-    }
+    render() {     
 
-    authenticationHandler = () => {
-        this.setState({authenticated: true})
-    }
-
-    render() {
-        
-
+       
         return(
             <Aux>
                 <Modal 
-                    show={!this.state.authenticated}
-                    modalClosed={this.authenticationHandler}>
+                    show={!this.props.authenticated}
+                    modalClosed={this.props.authenticationHandler}>
                     <p className='uk-heading-medium'>Please log in</p>
                     <Spinner/>
                 </Modal>
-                {this.state.authenticated ? <p>you are authenticated</p> : null}
+                {this.props.authenticated ? <p>you are authenticated</p> : null}
             </Aux>
         );
     };

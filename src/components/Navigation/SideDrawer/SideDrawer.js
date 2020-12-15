@@ -1,8 +1,9 @@
 import React from 'react';
-import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from "../../UI/Backdrop/Backdrop";
 import Aux from "../../../hoc/Aux/Aux";
 import classes from './SideDrawer.module.css';
+import { ListItem, List} from 'uikit-react';
+import { Link } from 'react-router-dom';
 
 const sideDrawer = ( props ) => {
 
@@ -20,10 +21,23 @@ const sideDrawer = ( props ) => {
                 clicked={props.closed}/>
 
             <div className={sideDrawerClasses.join(" ")}>
-                
-                <nav>
-                    <NavigationItems/>
-                </nav>
+                        <List type="divider">
+                            <ListItem>
+                                <Link to='/login'>
+                                    Log in
+                                </Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link to='/dives'>
+                                    Logbook
+                                </Link>
+                            </ListItem>
+                            <ListItem>
+                                <Link to='/add'>
+                                    Add
+                                </Link>
+                            </ListItem>
+                        </List>
             </div>
         </Aux>
     );
