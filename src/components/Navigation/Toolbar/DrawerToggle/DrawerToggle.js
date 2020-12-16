@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from './DrawerToggle.module.css';
-//import menuIcon from '../../../../assets/images/hamburger-menu.png';
 
 const drawerToggle = ( props ) => {
 

@@ -1,9 +1,6 @@
 import React from 'react';
-import { NavbarSticky, NavbarContainer, Navbar, ListItem, Icon } from 'uikit-react';
+import { NavbarSticky, NavbarContainer, Navbar, ListItem } from 'uikit-react';
 import { NavLink } from 'react-router-dom';
-import "../../../../node_modules/uikit/dist/js/uikit-icons";
-// import Logo from '../../Logo/Logo';
-//import NavigationItems from "../NavigationItems/NavigationItems";
 import DrawerToggle from "./DrawerToggle/DrawerToggle";
 import classes from './Toolbar.module.css';
 import Logo from '../../Logo/Logo';
@@ -19,25 +16,25 @@ const toolbar = ( props ) => {
             />
             
             <NavbarSticky options="animation: uk-animation-slide-top; cls-inactive: uk-navbar-transparent uk-light; top: 556;">
-                <NavbarContainer>
-                    <Navbar>
-                        <ListItem>
+                <div className='uk-navbar-top'>
+                    <ul className='uk-navbar-nav'>
+                        <li>
                             <NavLink to='/login'>
                                 {props.authenticated ? "Log out" : "Log in"}
                             </NavLink>
-                        </ListItem>
-                        <ListItem>
+                        </li>
+                        <li>
                             <NavLink to='/dives'>
                                 Logbook
                             </NavLink>
-                        </ListItem>
-                        <ListItem>
+                        </li>
+                        <li>
                             <NavLink to='/add'>
                                 Add
                             </NavLink>
-                        </ListItem>
-                    </Navbar>
-                </NavbarContainer>
+                        </li>
+                    </ul>
+                </div>
             </NavbarSticky>
 
             <div className={classes.Logo}>

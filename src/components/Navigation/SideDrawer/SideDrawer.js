@@ -2,12 +2,13 @@ import React from 'react';
 import Backdrop from "../../UI/Backdrop/Backdrop";
 import Aux from "../../../hoc/Aux/Aux";
 import classes from './SideDrawer.module.css';
-import { ListItem, List} from 'uikit-react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import '../../../../node_modules/uikit/dist/css/uikit.css'
+
 
 const sideDrawer = ( props ) => {
 
-    const sideDrawerClasses = [classes.SideDrawer];
+    const sideDrawerClasses = [classes.SideDrawer, ];
     if (props.open) {
         sideDrawerClasses.push(classes.Open);
     }
@@ -15,31 +16,33 @@ const sideDrawer = ( props ) => {
         sideDrawerClasses.push(classes.Close);
     }
     return(
+
         <Aux>
-            <Backdrop 
+             <Backdrop 
                 show={props.open} 
                 clicked={props.closed}/>
-
-            <div className={sideDrawerClasses.join(" ")}>
-                        <List type="divider">
-                            <ListItem>
-                                <Link to='/login'>
-                                    Log in
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link to='/dives'>
-                                    Logbook
-                                </Link>
-                            </ListItem>
-                            <ListItem>
-                                <Link to='/add'>
-                                    Add
-                                </Link>
-                            </ListItem>
-                        </List>
+            
+            <div className={sideDrawerClasses.join(" ")} >
+                <ul className="uk-nav uk-nav-default">
+                    <li className='uk-active'>
+                        <NavLink onClick={props.closed} to='/login'>
+                            {props.authenticated ? "Log out" : "Log in"}
+                        </NavLink>
+                    </li>
+                    <li className='uk-active'>
+                        <NavLink onClick={props.closed} to='/dives'>
+                            Logbook
+                        </NavLink>
+                    </li>
+                    <li className='uk-active'>
+                        <NavLink onClick={props.closed} to='/add'>
+                            Add
+                        </NavLink>
+                    </li>
+                </ul>
             </div>
-        </Aux>
+      </Aux>
+      
     );
 };
 

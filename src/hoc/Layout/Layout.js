@@ -3,6 +3,7 @@ import Aux from "../Aux/Aux";
 import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
 import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
 import classes from "./Layout.module.css";
+import '../../../node_modules/uikit/dist/css/uikit.css'
 
 class Layout extends Component {
 
@@ -29,6 +30,7 @@ class Layout extends Component {
                 <SideDrawer 
                     closed = {this.closeSideDrawerHandler}
                     open = {this.state.showSideDrawer}/>
+                
                 <main className = {classes.Content}>
                     {this.props.children}
                 </main>
