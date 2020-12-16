@@ -14,8 +14,8 @@ class Login extends Component {
             <Aux>
                 <Modal 
                     show={!this.props.authenticated}
-                    modalClosed={this.props.authenticationHandler}>
-                    <p className='uk-heading-medium'>Please log in</p>
+                    modalClosed={this.props.loginHandler}>
+                    <p className='uk-heading-small'>Please log in</p>
                     <Spinner/>
                 </Modal>
                 {this.props.authenticated ? <p>you are authenticated</p> : null}

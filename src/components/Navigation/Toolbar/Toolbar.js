@@ -1,11 +1,13 @@
 import React from 'react';
-import { NavbarSticky, NavbarContainer, Navbar, ListItem } from 'uikit-react';
-import { NavLink } from 'react-router-dom';
+import { NavbarSticky } from 'uikit-react';
 import DrawerToggle from "./DrawerToggle/DrawerToggle";
 import classes from './Toolbar.module.css';
 import Logo from '../../Logo/Logo';
+import NavigationItems from '../NavigationItems/NavigationItems';
 
 const toolbar = ( props ) => {
+
+    
 
     return(
 
@@ -17,23 +19,9 @@ const toolbar = ( props ) => {
             
             <NavbarSticky options="animation: uk-animation-slide-top; cls-inactive: uk-navbar-transparent uk-light; top: 556;">
                 <div className='uk-navbar-top'>
-                    <ul className='uk-navbar-nav'>
-                        <li>
-                            <NavLink to='/login'>
-                                {props.authenticated ? "Log out" : "Log in"}
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/dives'>
-                                Logbook
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/add'>
-                                Add
-                            </NavLink>
-                        </li>
-                    </ul>
+                    <NavigationItems 
+                        classes='uk-navbar-nav'
+                        authenticated={props.authenticated}/>
                 </div>
             </NavbarSticky>
 

@@ -2,8 +2,8 @@ import React from 'react';
 import Backdrop from "../../UI/Backdrop/Backdrop";
 import Aux from "../../../hoc/Aux/Aux";
 import classes from './SideDrawer.module.css';
-import { NavLink } from 'react-router-dom';
 import '../../../../node_modules/uikit/dist/css/uikit.css'
+import NavigationItems from '../NavigationItems/NavigationItems';
 
 
 const sideDrawer = ( props ) => {
@@ -23,23 +23,11 @@ const sideDrawer = ( props ) => {
                 clicked={props.closed}/>
             
             <div className={sideDrawerClasses.join(" ")} >
-                <ul className="uk-nav uk-nav-default">
-                    <li className='uk-active'>
-                        <NavLink onClick={props.closed} to='/login'>
-                            {props.authenticated ? "Log out" : "Log in"}
-                        </NavLink>
-                    </li>
-                    <li className='uk-active'>
-                        <NavLink onClick={props.closed} to='/dives'>
-                            Logbook
-                        </NavLink>
-                    </li>
-                    <li className='uk-active'>
-                        <NavLink onClick={props.closed} to='/add'>
-                            Add
-                        </NavLink>
-                    </li>
-                </ul>
+                <NavigationItems
+                    classes="uk-nav uk-nav-default"
+                    authenticated={props.authenticated}
+                    closed={props.closed}
+                />
             </div>
       </Aux>
       
