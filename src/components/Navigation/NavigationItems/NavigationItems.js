@@ -1,5 +1,4 @@
 import React from 'react';
-import Aux from '../../../hoc/Aux/Aux';
 import { NavLink } from 'react-router-dom'
 // import classes from './NavigationItems.module.css';
 
@@ -7,14 +6,14 @@ const NavigationItems = ( props ) => {
 
     let LoginItem = (
         <NavLink onClick={props.closed} to='/login'>
-            Log in
+            Login
         </NavLink>
     );
 
     if (props.authenticated) {
         LoginItem = (
             <NavLink onClick={props.closed} to='/logout'>
-                Log out
+                Logout
             </NavLink>
         );
     };

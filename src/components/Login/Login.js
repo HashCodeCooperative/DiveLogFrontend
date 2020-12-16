@@ -9,7 +9,6 @@ class Login extends Component {
 
     render() {     
 
-       
         return(
             <Aux>
                 <Modal 
@@ -23,7 +22,7 @@ class Login extends Component {
                             authenticate
                         </button>
                 </Modal>
-                {this.props.authenticated ? <p>you are authenticated</p> : null}
+                {this.props.authenticated ? <div className="uk-card uk-card-body uk-card-default"><h3 className="uk-card-title">authenticated</h3><p>you have succesfully logged in</p></div> : null}
             </Aux>
         );
     };
