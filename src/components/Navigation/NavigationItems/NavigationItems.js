@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom'
 // import classes from './NavigationItems.module.css';
+import 'uikit/dist/css/uikit.min.css'
 
 const NavigationItems = ( props ) => {
 
+    
     let LoginItem = (
         <NavLink onClick={props.closed} to='/login'>
             Login

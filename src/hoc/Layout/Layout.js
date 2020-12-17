@@ -32,7 +32,7 @@ class Layout extends Component {
                     open = {this.state.showSideDrawer}
                     authenticated={this.props.authenticated}/>
                 
-                <main className = {classes.Content}>
+                <main className = {classes.Content} >
                     {this.props.children}
                 </main>
             </Aux>

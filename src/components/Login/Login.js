@@ -14,7 +14,7 @@ class Login extends Component {
                 <Modal 
                     show={!this.props.authenticated}
                     modalClosed={this.props.loginHandler}>
-                    <p className='uk-heading-small'>Please log in</p>
+                    <p>Please log in</p>
                     <Spinner/>
                     <button 
                         className="uk-button uk-button-default"
