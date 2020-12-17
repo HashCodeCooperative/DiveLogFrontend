@@ -7,8 +7,6 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 
 const toolbar = ( props ) => {
 
-    
-
     return(
 
         <header className={classes.Toolbar + ' uk-background-muted'}>
@@ -21,7 +19,8 @@ const toolbar = ( props ) => {
                 <div className='uk-navbar-top'>
                     <NavigationItems 
                         classes='uk-navbar-nav'
-                        authenticated={props.authenticated}/>
+                        authenticated={props.authenticated}
+                        diverId={props.diverId}/>
                 </div>
             </NavbarSticky>
 

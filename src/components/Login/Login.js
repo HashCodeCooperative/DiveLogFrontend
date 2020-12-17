@@ -7,18 +7,21 @@ import Aux from '../../hoc/Aux/Aux';
 
 class Login extends Component {
 
+    diverId = 1;
+
     render() {     
 
         return(
             <Aux>
                 <Modal 
                     show={!this.props.authenticated}
-                    modalClosed={this.props.loginHandler}>
+                    // modalClosed={this.props.loginHandler}
+                >
                     <p>Please log in</p>
                     <Spinner/>
                     <button 
                         className="uk-button uk-button-default"
-                        onClick={this.props.loginHandler}>
+                        onClick={() => this.props.loginHandler(this.diverId)}>
                             authenticate
                         </button>
                 </Modal>

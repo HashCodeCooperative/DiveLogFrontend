@@ -26,11 +26,14 @@ class Layout extends Component {
             <Aux>
                 <Toolbar 
                     drawerToggleClicked = {this.drawerToggleHandler}
-                    authenticated={this.props.authenticated}/>
+                    authenticated={this.props.authenticated}
+                    diverId={this.props.diverId}/>
+                    
                 <SideDrawer 
                     closed = {this.closeSideDrawerHandler}
                     open = {this.state.showSideDrawer}
-                    authenticated={this.props.authenticated}/>
+                    authenticated={this.props.authenticated}
+                    diverId={this.props.diverId}/>
                 
                 <main className = {classes.Content} >
                     {this.props.children}

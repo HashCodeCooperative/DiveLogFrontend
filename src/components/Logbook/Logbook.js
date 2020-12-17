@@ -1,14 +1,16 @@
-import React, {Component} from 'react';
+import React from 'react';
 // import classes from './Logbook.module.css';
 import '../../../node_modules/uikit/dist/css/uikit.css';
+import Aux from '../../hoc/Aux/Aux';
+import StatisticsPanel from './StatisticsPanel/StatisticsPanel';
 
-class Logbook extends Component {
+const logbook = (props) => {
 
-    render() {
-        return(
-            <div className='uk-heading-medium'>Logbook</div>
-        );
-    };
-}
+    return(
+        <Aux>
+            <StatisticsPanel diverId={props.match.params.diverId}/>
+        </Aux>
+    );
+};
 
-export default Logbook;
+export default logbook;

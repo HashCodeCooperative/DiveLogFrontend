@@ -13,20 +13,24 @@ import Logout from './components/Logout/Logout';
 class App extends Component {
 
   state={
-    authenticated: false
+    authenticated: false,
+    diverId: null
   }
 
-  loginHandler = () => {
-    this.setState({authenticated: true});
+  loginHandler = (diverId) => {
+    this.setState({authenticated: true, diverId: diverId});
   }
 
   logoutHandler = () => {
-    this.setState({authenticated: false});
+    this.setState({authenticated: false, diverId: null});
   }
   
   render() {
     return (
-      <Layout authenticated={this.state.authenticated}>
+      <Layout 
+          authenticated={this.state.authenticated}
+          diverId={this.state.diverId}>
+
           <Switch>
             
             <Route exact path='/login'> 
@@ -40,9 +44,9 @@ class App extends Component {
                 logoutHandler={this.logoutHandler}/>
             </Route>
 
-            <Route exact path='/dives' component={Logbook}/>
+            {this.state.authenticated ? <Route exact path='/dives/:diverId' component={Logbook}/> : null}
        
-            <Route exact path='/add' component={LogADive}/>
+            {this.state.authenticated ? <Route exact path='/add:diverId' component={LogADive}/> : null}
        
           </Switch>
        

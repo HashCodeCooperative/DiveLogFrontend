@@ -19,14 +19,14 @@ const NavigationItems = ( props ) => {
             </NavLink>
         );
     };
-    
+
     return(
         <ul className={props.classes}>
             <li>
                 {LoginItem}
             </li>
             <li>
-                <NavLink onClick={props.closed} to='/dives'>
+                <NavLink onClick={props.closed} to={'/dives/'+props.diverId}>
                     Logbook
                 </NavLink>
             </li>

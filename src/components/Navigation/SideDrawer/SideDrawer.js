@@ -27,6 +27,7 @@ const sideDrawer = ( props ) => {
                     classes="uk-nav uk-nav-default"
                     authenticated={props.authenticated}
                     closed={props.closed}
+                    diverId={props.diverId}
                 />
             </div>
       </Aux>
