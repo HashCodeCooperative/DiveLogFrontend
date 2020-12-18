@@ -2,7 +2,6 @@ import React from 'react';
 import Backdrop from "../../UI/Backdrop/Backdrop";
 import Aux from "../../../hoc/Aux/Aux";
 import classes from './SideDrawer.module.css';
-import '../../../../node_modules/uikit/dist/css/uikit.css'
 import NavigationItems from '../NavigationItems/NavigationItems';
 
 

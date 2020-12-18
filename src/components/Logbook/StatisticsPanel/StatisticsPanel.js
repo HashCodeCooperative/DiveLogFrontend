@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import axios from '../../../axios-backend';
 import Spinner from '../../UI/Spinner/Spinner';
-import '../../../../node_modules/uikit/dist/css/uikit.css';
 
 // import classes from './StatisticsPanel.module.css';
 

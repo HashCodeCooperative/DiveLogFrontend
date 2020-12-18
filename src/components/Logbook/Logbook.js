@@ -1,6 +1,5 @@
 import React from 'react';
 // import classes from './Logbook.module.css';
-import '../../../node_modules/uikit/dist/css/uikit.css';
 import Aux from '../../hoc/Aux/Aux';
 import StatisticsPanel from './StatisticsPanel/StatisticsPanel';
 

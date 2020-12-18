@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 // import classes from './Login.module.css';
-import '../../../node_modules/uikit/dist/css/uikit.css';
 import Modal from '../UI/Modal/Modal';
 import Spinner from '../UI/Spinner/Spinner';
 import Aux from '../../hoc/Aux/Aux';

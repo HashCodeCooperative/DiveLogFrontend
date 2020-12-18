@@ -6,7 +6,9 @@ class LogADive extends Component {
 
     render() {
         return(
-            <div className='uk-heading-medium'>Log a dive</div>
+            <div className='uk-container'>
+                Here will be a LogADive component
+            </div>
         );
     };
 }

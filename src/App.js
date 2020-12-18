@@ -7,7 +7,6 @@ import LogADive from './components/LogADive/LogADive';
 import Logbook from './components/Logbook/Logbook';
 import axios from '../src/axios-backend';
 import {Route, Redirect, Switch} from 'react-router-dom';
-import '../node_modules/uikit/dist/css/uikit.css';
 import Logout from './components/Logout/Logout';
 
 class App extends Component {

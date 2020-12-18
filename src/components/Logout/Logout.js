@@ -4,12 +4,17 @@ import {Redirect} from 'react-router-dom';
 
 class Logout extends Component {
 
+    componentDidMount() {
+        this.props.logoutHandler();
+    }
+
     render() {
 
-        this.props.logoutHandler();
-
         return(
-            <Redirect to='/login'/>
+            <div>
+                <p>you have logged out</p>
+                <Redirect to='/login'/>
+            </div>
         );
     };
 }

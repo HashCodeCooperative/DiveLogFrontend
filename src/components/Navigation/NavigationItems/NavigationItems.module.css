@@ -1,0 +1,9 @@
+.NavigationItem {
+    color: #909090;
+}
+
+.NavigationItem:hover,
+.NavigationItem:active,
+.NavigationItem .active {
+    color: #707070;
+}
