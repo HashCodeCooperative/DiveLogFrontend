@@ -45,7 +45,7 @@ class App extends Component {
 
             {this.state.authenticated ? <Route exact path='/dives/:diverId' component={Logbook}/> : null}
        
-            {this.state.authenticated ? <Route exact path='/add:diverId' component={LogADive}/> : null}
+            {this.state.authenticated ? <Route exact path='/add/:diverId' component={LogADive}/> : null}
        
           </Switch>
        

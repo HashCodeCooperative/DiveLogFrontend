@@ -38,18 +38,18 @@ class StatisticsPanel extends Component {
             content = (<div className='uk-flex'>
                 
                 <div className="uk-card uk-card-default uk-card-body uk-margin-top uk-align-center">
-                    <p className="uk-card-title">Number of dives</p>
-                    <p>{this.state.statistics.numberOfDives}</p>
+                    {/* <p className="uk-card-title"></p> */}
+                    <p>Number of dives: <strong>{this.state.statistics.numberOfDives}</strong></p>
                 </div>
 
                 <div className="uk-card uk-card-default uk-card-body uk-margin-left uk-margin-top uk-align-center">
-                    <p className="uk-card-title">Deepest dive depth</p>
-                    <p>{this.state.statistics.deepestDiveDepth} meters</p>
+                    {/* <p className="uk-card-title">Deepest dive depth</p> */}
+                    <p> Deepest dive depth: <strong>{this.state.statistics.deepestDiveDepth}</strong> meters</p>
                 </div>
 
                 <div className="uk-card uk-card-default uk-card-body uk-margin-left uk-margin-top uk-align-center">
-                    <p className="uk-card-title">Longest dive duration</p>
-                    <p>{this.state.statistics.longestDiveDuration} minutes</p>
+                    {/* <p className="uk-card-title">Longest dive duration</p> */}
+                    <p>Longest dive duration: <strong>{this.state.statistics.longestDiveDuration}</strong> minutes</p>
                 </div>
 
             </div>)

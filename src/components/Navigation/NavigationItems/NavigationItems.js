@@ -32,7 +32,7 @@ const NavigationItems = ( props ) => {
                 
             </li>
             <li>
-                <NavLink onClick={props.closed} to='/add'>
+                <NavLink onClick={props.closed} to={'/add/'+props.diverId}>
                 <p className={classes.NavigationItem}>ADD</p>
                 </NavLink>
             </li>
