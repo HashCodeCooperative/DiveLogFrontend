@@ -22,10 +22,13 @@ const diveDetails = ( props ) => {
                         day + ' ' +
                         date.getHours() + ':' +
                         minutes;
-                        
+
     return(
         <li>
-            <a className="uk-accordion-title" href="#">{dateString} , {props.dive.dive.diveSite.name} , {props.dive.durationInMinutes} min , {props.dive.maxDepth} m</a>
+            <span className="uk-label"> {props.dive.durationInMinutes} min , {props.dive.maxDepth} m</span>
+            <a className="uk-accordion-title" href="#" uk-tooltip="click to show/hide details">
+             {dateString} , {props.dive.dive.diveSite.name} 
+            </a>
             <div className="uk-accordion-content">
                 
                 <div>
