@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Modal from '../../components/UI/Modal/Modal';
 import Aux from '../Aux/Aux';
 import '../../../node_modules/uikit/dist/css/uikit.css';
+import {Notification} from 'uikit-react';
 //import classes from './withErrorHandler.module.css';
 
 const withErrorHandler = ( WrappedComponent, axios ) => {
@@ -40,8 +41,9 @@ const withErrorHandler = ( WrappedComponent, axios ) => {
                         show={this.state.error}
                         modalClosed={this.errorConfirmedHandler}
                         >
-                            {this.state.error ? <p className='uk-text-warning'>{this.state.error.message}</p> : null}
-                        </Modal>
+                            {this.state.error ? <p className='uk-text-danger'>{this.state.error.message}</p> : null}
+                    </Modal>
+                    
                     <WrappedComponent {...this.props} />
                 </Aux>
             );
