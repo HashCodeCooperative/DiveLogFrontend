@@ -193,7 +193,8 @@ class DiveList extends Component {
         }
 
         return(
-            <div className='uk-container'>
+            <div className='uk-container'
+            uk-scrollspy="cls: uk-animation-slide-bottom; repeat: true">
             
                 {content}
 
