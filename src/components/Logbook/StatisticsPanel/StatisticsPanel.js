@@ -42,17 +42,20 @@ class StatisticsPanel extends Component {
             
             content = (<Aux>
                 
-                <div className="uk-card uk-card-default uk-card-body uk-margin-top uk-align-center">
-                    {/* <p className="uk-card-titl e"></p> */}
+                <div className="uk-card uk-card-default uk-card-body uk-margin-top uk-align-center"
+                    uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
+                    {/* <p className="uk-card-title"></p> */}
                     <p>Number of recorded dives: <strong>{this.state.statistics.numberOfDives}</strong></p>
                 </div>
 
-                <div className="uk-card uk-card-default uk-card-body uk-margin-left uk-margin-top uk-align-center">
+                <div className="uk-card uk-card-default uk-card-body uk-margin-left uk-margin-top uk-align-center"
+                    uk-scrollspy="cls: uk-animation-slide-top; repeat: true">
                     {/* <p className="uk-card-title">Deepest dive depth</p> */}
                     <p> Deepest dive depth: <strong>{this.state.statistics.deepestDiveDepth}</strong> m</p>
                 </div>
 
-                <div className="uk-card uk-card-default uk-card-body uk-margin-left uk-margin-top uk-align-center">
+                <div className="uk-card uk-card-default uk-card-body uk-margin-left uk-margin-top uk-align-center"
+                    uk-scrollspy="cls: uk-animation-slide-right; repeat: true">
                     {/* <p className="uk-card-title">Longest dive duration</p> */}
                     <p>Longest dive duration: <strong>{this.state.statistics.longestDiveDuration}</strong> min</p>
                 </div>

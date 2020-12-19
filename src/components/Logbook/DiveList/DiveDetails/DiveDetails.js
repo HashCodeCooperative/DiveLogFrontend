@@ -1,5 +1,4 @@
 import React from 'react';
-import {Accordion} from 'uikit-react';
 
 // import classes from './DiveDetails.module.css';
 
@@ -7,11 +6,23 @@ const diveDetails = ( props ) => {
 
     console.log(props);
     const date = new Date(props.dive.dive.startTime)
-    const dateString =  date.getFullYear() + "/" + 
-                        date.getMonth() + '/' + 
-                        date.getDate() + ' ' +
+    
+    let minutes = date.getMinutes();
+    if (minutes < 10 ) {
+        minutes = '0' + minutes;
+    }
+
+    let day = date.getDate();
+    if (day < 10 ) {
+        day = '0' + day;
+    }
+
+    const dateString =  date.getFullYear() + "-" + 
+                        date.getMonth() + '-' + 
+                        day + ' ' +
                         date.getHours() + ':' +
-                        date.getMinutes()
+                        minutes;
+                        
     return(
         <li>
             <a className="uk-accordion-title" href="#">{dateString} , {props.dive.dive.diveSite.name} , {props.dive.durationInMinutes} min , {props.dive.maxDepth} m</a>

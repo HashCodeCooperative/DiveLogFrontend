@@ -184,7 +184,7 @@ class DiveList extends Component {
             content = <p className='uk-text-danger'>something went wrong...</p>
         } else
         if (this.state.dives) {
-            const diveDetails = this.state.dives.map(dive => <DiveDetails dive={dive}/>)
+            const diveDetails = this.state.dives.map(dive => <DiveDetails key={dive.userDiveId} dive={dive}/>)
             content = (
                 <Accordion className='uk-margin-left uk-margin-right' options="multiple: true">
                     {diveDetails}
