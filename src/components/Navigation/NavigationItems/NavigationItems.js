@@ -58,7 +58,7 @@ const NavigationItems = ( props ) => {
                         :
                         <span 
                             className={classes.NavigationItem}
-                            uk-icon="icon: list"
+                            uk-icon="icon: database"
                             uk-tooltip="show the logbook">                     
                         </span>
                     }
@@ -67,12 +67,26 @@ const NavigationItems = ( props ) => {
             <li>
                 <NavLink onClick={props.closed} to={'/add/'+props.diverId}>
                     {props.mode==='sidebar' ? 
-                        <span>ADD</span> 
+                        <span>ADD A DIVE</span> 
                         :
                         <span 
                             className={classes.NavigationItem}
                             uk-icon="icon: plus"
                             uk-tooltip="add a dive">                     
+                        </span>
+                    }
+                </NavLink>
+            </li>
+
+            <li>
+                <NavLink onClick={props.closed} to={'/about'}>
+                    {props.mode==='sidebar' ? 
+                        <span>ABOUT</span> 
+                        :
+                        <span 
+                            className={classes.NavigationItem}
+                            uk-icon="icon: info"
+                            uk-tooltip="about the application">                     
                         </span>
                     }
                 </NavLink>

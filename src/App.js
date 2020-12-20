@@ -8,6 +8,7 @@ import Logbook from './components/Logbook/Logbook';
 import axios from '../src/axios-backend';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import Logout from './components/Logout/Logout';
+import About from './components/About/About';
 
 class App extends Component {
 
@@ -47,6 +48,10 @@ class App extends Component {
        
             {this.state.authenticated ? <Route exact path='/add/:diverId' component={LogADive}/> : null}
        
+            <Route exact path='/about'>
+              <About/>
+            </Route>
+            
           </Switch>
        
           <Redirect from='/' to='/login'/>
