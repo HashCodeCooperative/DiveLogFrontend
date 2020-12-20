@@ -1,14 +1,16 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom'
 import classes from './NavigationItems.module.css';
-// import 'uikit/dist/css/uikit.min.css'
 
 const NavigationItems = ( props ) => {
 
     let navItemsClasses = null;
+    let linkClasses =[];
 
     if (props.mode === 'toolbar') {
         navItemsClasses = 'uk-navbar-nav uk-iconnav';
+        linkClasses.push(classes.NavigationItem);
+        linkClasses.push(classes.DesktopOnly);
     } else
     
     if (props.mode === 'sidebar') {
@@ -21,7 +23,7 @@ const NavigationItems = ( props ) => {
                 <span>'SIGN-IN'</span> 
                 :
                 <span 
-                    className={classes.NavigationItem}
+                    className={linkClasses.join(' ')}
                     uk-icon="icon: sign-in"
                     uk-tooltip="sign-in">                     
                 </span>
@@ -36,7 +38,7 @@ const NavigationItems = ( props ) => {
                     <span>SIGN-OUT</span> 
                     :
                     <span 
-                        className={classes.NavigationItem}
+                        className={linkClasses.join(' ')}
                         uk-icon="icon: sign-out"
                         uk-tooltip="sign-out">                     
                     </span>
@@ -47,7 +49,6 @@ const NavigationItems = ( props ) => {
 
     return(
         <ul className={navItemsClasses}>
-        {/*  <ul className='uk-nav uk-nav-default uk-navbar-nav'> */}
             <li>
                 {LoginItem}
             </li>
@@ -57,7 +58,7 @@ const NavigationItems = ( props ) => {
                         <span>LOGBOOK</span> 
                         :
                         <span 
-                            className={classes.NavigationItem}
+                            className={linkClasses.join(' ')}
                             uk-icon="icon: database"
                             uk-tooltip="show the logbook">                     
                         </span>
@@ -70,9 +71,23 @@ const NavigationItems = ( props ) => {
                         <span>ADD A DIVE</span> 
                         :
                         <span 
-                            className={classes.NavigationItem}
+                            className={linkClasses.join(' ')}
                             uk-icon="icon: plus"
                             uk-tooltip="add a dive">                     
+                        </span>
+                    }
+                </NavLink>
+            </li>
+
+            <li>
+                <NavLink onClick={props.closed} to={'/user'}>
+                    {props.mode==='sidebar' ? 
+                        <span>USER'S ACCOUNT</span> 
+                        :
+                        <span 
+                            className={linkClasses.join(' ')}
+                            uk-icon="icon: user"
+                            uk-tooltip="user's account">                     
                         </span>
                     }
                 </NavLink>
@@ -84,7 +99,7 @@ const NavigationItems = ( props ) => {
                         <span>ABOUT</span> 
                         :
                         <span 
-                            className={classes.NavigationItem}
+                            className={linkClasses.join(' ')}
                             uk-icon="icon: info"
                             uk-tooltip="about the application">                     
                         </span>

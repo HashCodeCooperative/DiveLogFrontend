@@ -23,7 +23,7 @@ const diveDetails = ( props ) => {
                         minutes;
 
     const partners = props.dive.dive.divers.map(diver => (
-        <li>
+        <li key={diver.user.userId}>
             <strong>{diver.user.firstName} {diver.user.lastName} </strong>
              ( <a uk-icon="icon: mail" href={"mailto:"+diver.user.email}></a>
             <a href={"mailto:"+diver.user.email}> {diver.user.email}</a> )

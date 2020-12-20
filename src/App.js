@@ -10,6 +10,7 @@ import {Route, Redirect, Switch} from 'react-router-dom';
 import Logout from './components/Logout/Logout';
 import About from './components/About/About';
 import EditDive from './components/EditDive/EditDive';
+import UserAccount from './components/UserAccount/UserAccount';
 
 class App extends Component {
 
@@ -54,6 +55,8 @@ class App extends Component {
             <Route exact path='/about' component={About}/>
 
             <Route exact path='/edit/:diveId' component={EditDive}/>
+
+            {this.state.authenticated ? <Route exact path='/user'><UserAccount userId={this.state.userId}/></Route> : null}
 
             <Redirect from='/' to={'/dives/'+this.state.diverId}/>
 

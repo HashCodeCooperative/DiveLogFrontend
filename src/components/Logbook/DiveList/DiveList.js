@@ -186,7 +186,7 @@ class DiveList extends Component {
                             "ballast":0,
                             "notes":"string",
                             "user":{
-                                "userId":3,
+                                "userId":5,
                                 "isRegistered":true,
                                 "login":"Albin",
                                 "firstName":"Jan",
