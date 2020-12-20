@@ -23,7 +23,8 @@ const sideDrawer = ( props ) => {
             
             <div className={sideDrawerClasses.join(" ")} >
                 <NavigationItems
-                    classes="uk-nav uk-nav-default"
+                    // classes="uk-nav uk-nav-default"
+                    mode='sidebar'
                     authenticated={props.authenticated}
                     closed={props.closed}
                     diverId={props.diverId}
