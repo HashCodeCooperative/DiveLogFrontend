@@ -9,6 +9,7 @@ import axios from '../src/axios-backend';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import Logout from './components/Logout/Logout';
 import About from './components/About/About';
+import EditDive from './components/EditDive/EditDive'
 
 class App extends Component {
 
@@ -50,6 +51,10 @@ class App extends Component {
        
             <Route exact path='/about'>
               <About/>
+            </Route>
+
+            <Route exact path='/edite/:diveId'>
+              <EditDive/>
             </Route>
             
           </Switch>

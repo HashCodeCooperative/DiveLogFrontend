@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom';
 // import classes from './DiveDetails.module.css';
 
 const diveDetails = ( props ) => {
@@ -25,10 +25,18 @@ const diveDetails = ( props ) => {
 
     return(
         <li>
-            <span className="uk-label"> {props.dive.durationInMinutes} min , {props.dive.maxDepth} m</span>
+            <div className = 'uk-flex'>
+                <span className="uk-label"> {props.dive.durationInMinutes} min , {props.dive.maxDepth} m</span>
+                <Link to={'/edit/' + props.dive.userDiveId}>
+                    <span uk-tooltip='edit the dive records' className='uk-margin-small-left uk-icon-link' uk-icon="icon: file-edit"></span>
+                </Link>
+            </div>
+                
             <a className="uk-accordion-title" href="#" uk-tooltip="click to show/hide details">
-             {dateString} , {props.dive.dive.diveSite.name} 
+                {dateString} , {props.dive.dive.diveSite.name} 
             </a>
+            
+            
             <div className="uk-accordion-content">
                 
                 <div>
