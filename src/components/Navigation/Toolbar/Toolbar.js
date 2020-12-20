@@ -16,19 +16,20 @@ const toolbar = ( props ) => {
             />
             
             <NavbarSticky options="animation: uk-animation-slide-top; cls-inactive: uk-navbar-transparent uk-light; top: 556;">
+                
                 <div className='uk-navbar-top'>
                     <NavigationItems 
-                        // classes='uk-navbar-nav uk-iconnav'
                         mode='toolbar'
                         authenticated={props.authenticated}
-                        diverId={props.diverId}/>
+                        diverId={props.diverId}
+                        userName={props.userName}/>
                 </div>
             </NavbarSticky>
 
             <div className={classes.Logo}>
                 <Logo/>
             </div>
-
+            
         </header>
     );
 };

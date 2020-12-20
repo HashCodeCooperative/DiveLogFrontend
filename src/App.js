@@ -16,15 +16,16 @@ class App extends Component {
 
   state={
     authenticated: false,
-    diverId: null
+    diverId: null,
+    userName: null
   }
 
-  loginHandler = (diverId) => {
-    this.setState({authenticated: true, diverId: diverId});
+  loginHandler = (diverId, userName) => {
+    this.setState({authenticated: true, diverId: diverId, userName: userName});
   }
 
   logoutHandler = () => {
-    this.setState({authenticated: false, diverId: null});
+    this.setState({authenticated: false, diverId: null, userName: null});
   }
   
   render() {
@@ -33,7 +34,8 @@ class App extends Component {
     return (
       <Layout 
           authenticated={this.state.authenticated}
-          diverId={this.state.diverId}>
+          diverId={this.state.diverId}
+          userName={this.state.userName}>
 
           <Switch>
             

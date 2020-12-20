@@ -27,7 +27,8 @@ class Layout extends Component {
                 <Toolbar 
                     drawerToggleClicked = {this.drawerToggleHandler}
                     authenticated={this.props.authenticated}
-                    diverId={this.props.diverId}/>
+                    diverId={this.props.diverId}
+                    userName={this.props.userName}/>
                     
                 <SideDrawer 
                     closed = {this.closeSideDrawerHandler}

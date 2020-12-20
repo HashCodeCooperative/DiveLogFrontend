@@ -7,6 +7,7 @@ import Aux from '../../hoc/Aux/Aux';
 class Login extends Component {
 
     diverId = 1;
+    userName = 'Lukasz Kaczmarek'
 
     render() {     
 
@@ -20,7 +21,7 @@ class Login extends Component {
                     <Spinner/>
                     <button 
                         className="uk-button uk-button-default"
-                        onClick={() => this.props.loginHandler(this.diverId)}>
+                        onClick={() => this.props.loginHandler(this.diverId, this.userName)}>
                             authenticate
                         </button>
                 </Modal>

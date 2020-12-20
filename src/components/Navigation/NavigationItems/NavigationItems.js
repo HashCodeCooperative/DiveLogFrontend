@@ -47,6 +47,28 @@ const NavigationItems = ( props ) => {
         );
     };
 
+    let userLink = null;
+    
+    if (props.mode==='sidebar') {
+        userLink = <span>USER'S ACCOUNT</span> 
+
+    } else
+    { 
+        userLink = (
+            <div className='uk-flex'>
+                <span 
+                    className={linkClasses.join(' ')}
+                    uk-icon="icon: user"
+                    uk-tooltip="user's account">                     
+                </span>
+                <span 
+                    className={linkClasses.join(' ') + ' uk-margin-small-left'}
+                    uk-tooltip="user's account">{props.userName}</span>
+            </div>
+        );
+    };
+                        
+
     return(
         <ul className={navItemsClasses}>
             <li>
@@ -80,20 +102,6 @@ const NavigationItems = ( props ) => {
             </li>
 
             <li>
-                <NavLink onClick={props.closed} to={'/user'}>
-                    {props.mode==='sidebar' ? 
-                        <span>USER'S ACCOUNT</span> 
-                        :
-                        <span 
-                            className={linkClasses.join(' ')}
-                            uk-icon="icon: user"
-                            uk-tooltip="user's account">                     
-                        </span>
-                    }
-                </NavLink>
-            </li>
-
-            <li>
                 <NavLink onClick={props.closed} to={'/about'}>
                     {props.mode==='sidebar' ? 
                         <span>ABOUT</span> 
@@ -104,6 +112,12 @@ const NavigationItems = ( props ) => {
                             uk-tooltip="about the application">                     
                         </span>
                     }
+                </NavLink>
+            </li>
+
+            <li>
+                <NavLink onClick={props.closed} to={'/user'}>
+                    {userLink}
                 </NavLink>
             </li>
         </ul>
