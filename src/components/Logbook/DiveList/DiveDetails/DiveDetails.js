@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 
 const diveDetails = ( props ) => {
 
-    console.log(props);
     const date = new Date(props.dive.dive.startTime)
     
     let minutes = date.getMinutes();
@@ -23,6 +22,14 @@ const diveDetails = ( props ) => {
                         date.getHours() + ':' +
                         minutes;
 
+    const partners = props.dive.dive.divers.map(diver => (
+        <li>
+            <strong>{diver.user.firstName} {diver.user.lastName} </strong>
+             ( <a uk-icon="icon: mail" href={"mailto:"+diver.user.email}></a>
+            <a href={"mailto:"+diver.user.email}> {diver.user.email}</a> )
+        </li>)
+    );
+
     return(
         <li>
             <div className = 'uk-flex'>
@@ -39,26 +46,44 @@ const diveDetails = ( props ) => {
             
             <div className="uk-accordion-content">
                 
-                <div>
-                    <div className="uk-card uk-card-default uk-card-body">
-                        <p className="uk-card-title">Dive details</p>
-                        <p>dive details content 1</p>
-                        <p>dive details content 2</p>
-                    </div>
+                <div className="uk-card uk-card-default uk-card-body">
+                    <p className="uk-card-title">Dive details</p>
+                    <ul className="uk-list uk-list-collapse uk-list-striped">
+                        <li>maximum depth: <strong>{props.dive.maxDepth}</strong> m</li>
+                        <li>average depth: <strong>{props.dive.avgDepth}</strong> m</li>
+                        <li>duration: <strong>{props.dive.durationInMinutes}</strong> min</li>
+                        <li>dive site: <strong>{props.dive.dive.diveSite.name}</strong></li>
+                        <li>GPS position: <strong>{props.dive.dive.diveSite.gpsPosition}</strong></li>
+                        <li>diving site type: <strong>{props.dive.dive.diveType}</strong></li>
+                        <li>water: <strong>{props.dive.dive.water}</strong></li>
+                        <li>water stream: <strong>{props.dive.dive.waterStream}</strong></li>
+                        <li>weather: <strong>{props.dive.dive.weather}</strong></li>
+                        <li>air temperature: <strong>{props.dive.dive.airTemp}</strong> C</li>
+                        <li>water temperature: <strong>{props.dive.dive.waterTemp}</strong> C</li>
+                        <li>visibility: <strong>{props.dive.dive.visibility}</strong> m</li>
+                        <li>notes: <strong>{props.dive.notes}</strong></li>
+                    </ul>        
                 </div>
-                <div>
-                    <div className="uk-card uk-card-default uk-card-body">
-                        <p className="uk-card-title">Equipment</p>
-                        <p>equipment details content 2</p>
-                        <p>equipment details content 1</p>
-                    </div>
+
+                <div className="uk-card uk-card-default uk-card-body">
+                    <p className="uk-card-title">Equipment</p>
+                    <ul className="uk-list uk-list-collapse uk-list-striped">
+                        <li>diving suit: <strong>{props.dive.divingSuit}</strong></li>
+                        <li>gas: <strong>{props.dive.gas}</strong></li>
+                        <li>cylinder type: <strong>{props.dive.cylinderType}</strong></li>
+                        <li>cylinder size: <strong>{props.dive.cylinderCapacity}</strong> l</li>
+                        <li>cylinder start pressure: <strong>{props.dive.cylStartPressure}</strong> bar</li>
+                        <li>cylinder end pressure: <strong>{props.dive.cylEndPressure}</strong> bar</li>
+                        <li>surface air consumption: <strong>{props.dive.surfaceAirConsumption}</strong> l/min</li>
+                        <li>ballast: <strong>{props.dive.ballast}</strong> kg</li>
+                    </ul>
                 </div>
-                <div>
-                    <div className="uk-card uk-card-default uk-card-body">
-                        <p className="uk-card-title">Partners</p>
-                        <p>partner 2</p>
-                        <p>partner 1</p>
-                    </div>
+
+                <div className="uk-card uk-card-default uk-card-body">
+                    <p className="uk-card-title">Partners</p>
+                    <ul className="uk-list uk-list-collapse uk-list-striped">
+                        {partners}
+                    </ul>
                 </div>
                 
             </div>

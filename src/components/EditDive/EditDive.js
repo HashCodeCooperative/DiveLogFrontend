@@ -5,7 +5,9 @@ class EditDive extends Component {
 
     render() {
         return(
-            <div className='uk-container'>Edit Dive</div>
+            <div className='uk-container'>
+                <p>Here will be the EditDive component</p>
+            </div>
         );
     };
 }

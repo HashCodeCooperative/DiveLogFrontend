@@ -64,8 +64,6 @@ class StatisticsPanel extends Component {
 
         };
 
-        
-
         return(
             <div className='uk-flex'>     
                 {content}

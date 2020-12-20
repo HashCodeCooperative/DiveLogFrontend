@@ -9,7 +9,7 @@ import axios from '../src/axios-backend';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import Logout from './components/Logout/Logout';
 import About from './components/About/About';
-import EditDive from './components/EditDive/EditDive'
+import EditDive from './components/EditDive/EditDive';
 
 class App extends Component {
 
@@ -27,6 +27,8 @@ class App extends Component {
   }
   
   render() {
+
+    console.log(this.state.authenticated);
     return (
       <Layout 
           authenticated={this.state.authenticated}
@@ -49,17 +51,13 @@ class App extends Component {
        
             {this.state.authenticated ? <Route exact path='/add/:diverId' component={LogADive}/> : null}
        
-            <Route exact path='/about'>
-              <About/>
-            </Route>
+            <Route exact path='/about' component={About}/>
 
-            <Route exact path='/edite/:diveId'>
-              <EditDive/>
-            </Route>
-            
+            <Route exact path='/edit/:diveId' component={EditDive}/>
+
+            <Redirect from='/' to={'/dives/'+this.state.diverId}/>
+
           </Switch>
-       
-          <Redirect from='/' to='/login'/>
       </Layout>
     );
   }

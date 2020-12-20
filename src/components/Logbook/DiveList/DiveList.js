@@ -170,6 +170,33 @@ class DiveList extends Component {
                                 "about":"uwielbiam nurkowac",
                                 "userDives":[]
                             }
+                        },
+                        {
+                            "userDiveId":5,
+                            "divingSuit":"Mokry",
+                            "gas":"Powietrze",
+                            "cylinderType":"Stalowy",
+                            "durationInMinutes":45,
+                            "cylinderCapacity":0,
+                            "cylStartPressure":0,
+                            "cylEndPressure":0,
+                            "surfaceAirConsumption":0.0,
+                            "maxDepth":0.0,
+                            "avgDepth":0.0,
+                            "ballast":0,
+                            "notes":"string",
+                            "user":{
+                                "userId":3,
+                                "isRegistered":true,
+                                "login":"Albin",
+                                "firstName":"Jan",
+                                "lastName":"Kowalski",
+                                "email":"jankowalski@wp.pl",
+                                "passwordHash":null,
+                                "passwordSalt":null,
+                                "about":"uwielbiam nurkowac",
+                                "userDives":[]
+                            }
                         }
                     ]
                 }
@@ -193,11 +220,8 @@ class DiveList extends Component {
         }
 
         return(
-            <div className='uk-container'
-            uk-scrollspy="cls: uk-animation-slide-bottom; repeat: true">
-            
+            <div className='uk-container' uk-scrollspy="cls: uk-animation-slide-bottom; repeat: true">
                 {content}
-
             </div>
         );
     };
