@@ -30,7 +30,6 @@ class App extends Component {
   
   render() {
 
-    console.log(this.state.authenticated);
     return (
       <Layout 
           authenticated={this.state.authenticated}

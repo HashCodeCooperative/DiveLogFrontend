@@ -8,7 +8,7 @@ const about = ( props ) => {
             <div className="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-align-center uk-animation-scale-up uk-margin-top">
                 <article className="uk-comment">
                     <header className="uk-comment-header">
-                        <div class="uk-grid-medium uk-flex-middle">
+                        <div className="uk-grid-medium uk-flex-middle">
                             <div className={classes.Logo}>
                                 <Logo logo='hashcode'/>
                             </div>
