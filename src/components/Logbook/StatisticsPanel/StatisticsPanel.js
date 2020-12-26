@@ -13,21 +13,21 @@ class StatisticsPanel extends Component {
 
     componentDidMount = () => {
       
-        // const path = '/users/' + this.props.diverId + '/statistics';
-        // axios.get(path)
-        //     .then(response => {
-        //         this.setState({statistics: response.data});
-        //     })
-        //     .catch(error => {
-        //         this.setState({error: error});
-        //     });
+        const path = '/users/' + this.props.diverId + '/statistics';
+        axios.get(path)
+            .then(response => {
+                this.setState({statistics: response.data});
+            })
+            .catch(error => {
+                this.setState({error: error});
+            });
 
-        this.setState({statistics: {
-            userName: 'Jan',
-            numberOfDives: 2,
-            deepestDiveDepth: 20,
-            longestDiveDuration: 60
-        }})
+        // this.setState({statistics: {
+        //     userName: 'Jan',
+        //     numberOfDives: 2,
+        //     deepestDiveDepth: 20,
+        //     longestDiveDuration: 60
+        // }})
     }
 
     render() {
