@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Modal from '../../components/UI/Modal/Modal';
 import Aux from '../Aux/Aux';
 import '../../../node_modules/uikit/dist/css/uikit.css';
-import {Notification} from 'uikit-react';
 //import classes from './withErrorHandler.module.css';
 
 const withErrorHandler = ( WrappedComponent, axios ) => {

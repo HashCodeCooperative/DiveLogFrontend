@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'https://diverloggerhashcode.azurewebsites.net/api',
+    // baseURL: 'https://diverloggerhashcode.azurewebsites.net/api',
+    baseURL: 'http://localhost:90/api',
     withCredentials: false,
     headers: {
         'Access-Control-Allow-Origin' : '*',

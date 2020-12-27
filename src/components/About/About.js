@@ -18,7 +18,7 @@ const about = ( props ) => {
                                         <div className={classes.LogoSmall}>
                                             <Logo/>
                                         </div>
-                                        <a class="uk-link-reset uk-margin-small-left" href="/">
+                                        <a className="uk-link-reset uk-margin-small-left" href="/">
                                             DiveLog
                                         </a>
                                     </div>
