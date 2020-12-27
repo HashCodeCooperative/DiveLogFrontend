@@ -15,7 +15,7 @@ class Logbook extends Component {
 
     componentDidMount = () => {
 
-        let path = '/user/' + this.props.match.params.diverId + '/dives';
+        let path = '/users/' + this.props.match.params.diverId + '/dives';
         
         axios.get(path)
             .then(response => {
