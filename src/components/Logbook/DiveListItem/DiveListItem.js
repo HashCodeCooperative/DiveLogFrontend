@@ -60,9 +60,11 @@ class DiveList extends Component {
                                 minutes;
 
             let details = null;
-            
+            let icon = "icon: plus-circle";
+
             if (this.state.showDetails) {
                 details = <DiveDetails diveDetails={diveDetails}/>
+                icon = "icon: minus-circle"
             };   
 
             content = (
@@ -73,10 +75,17 @@ class DiveList extends Component {
                             <span uk-tooltip='edit the dive records' className='uk-margin-small-left uk-icon-link' uk-icon="icon: file-edit"></span>
                         </Link>
                     </div>
-                    <div className = 'uk-flex'>
+                    
+                    <div className='uk-flex uk-margin-small-top'>    
                         <h5 onClick={this.toggleDetailsHandler}
                             uk-tooltip='click to show/hide details'>
-                            <span>{dateString} , {diveDetails.dive.diveSite.name}</span>
+                            <span 
+                                uk-tooltip='click to show/hide details' 
+                                className='uk-margin-small-right uk-icon-link' 
+                                uk-icon={icon}
+                                onClick={this.toggleDetailsHandler}>
+                            </span>
+                            {dateString} , {diveDetails.dive.diveSite.name}
                         </h5>                   
                     </div>
                     {details}

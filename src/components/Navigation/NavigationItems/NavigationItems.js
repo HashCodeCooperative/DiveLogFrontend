@@ -20,7 +20,7 @@ const NavigationItems = ( props ) => {
     let LoginItem = (
         <Link onClick={props.closed} to='/login'>
             {props.mode==='sidebar' ? 
-                <span>'SIGN-IN'</span> 
+                <span>SIGN-IN</span> 
                 :
                 <span 
                     className={linkClasses.join(' ')}

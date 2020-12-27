@@ -58,6 +58,7 @@ class diveDetails extends Component {
                         {partners}
                     </ul>
                 </div>
+                
             </Aux>          
         );
     } 
