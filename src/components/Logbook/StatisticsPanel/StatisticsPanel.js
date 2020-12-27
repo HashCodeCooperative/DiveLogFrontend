@@ -21,13 +21,6 @@ class StatisticsPanel extends Component {
             .catch(error => {
                 this.setState({error: error});
             });
-
-        // this.setState({statistics: {
-        //     userName: 'Jan',
-        //     numberOfDives: 2,
-        //     deepestDiveDepth: 20,
-        //     longestDiveDuration: 60
-        // }})
     }
 
     render() {
@@ -35,7 +28,7 @@ class StatisticsPanel extends Component {
 
         if (this.state.error) {
             content = (
-                <p className='uk-text-danger'>something went wrong...</p>
+                <p className='uk-text-danger uk-margin-top uk-align-center'>something went wrong...</p>
             )
         } else
         if (this.state.statistics) {

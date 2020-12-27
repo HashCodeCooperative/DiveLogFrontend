@@ -37,7 +37,7 @@ class DiveList extends Component {
 
         let content = <Spinner/>
         if (this.state.error) {
-            content = <p className='uk-text-danger'>something went wrong...</p>
+            content = <p className='uk-text-danger uk-margin-top uk-align-center'>something went wrong...</p>
         } else
         if (diveDetails) {
 
