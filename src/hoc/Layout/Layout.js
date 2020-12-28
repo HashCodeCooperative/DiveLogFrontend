@@ -28,15 +28,19 @@ class Layout extends Component {
                     drawerToggleClicked = {this.drawerToggleHandler}
                     authenticated={this.props.authenticated}
                     diverId={this.props.diverId}
-                    userName={this.props.userName}/>
+                    userName={this.props.userName}
+                    modeToggler={this.props.modeToggler}
+                    modeClasses={this.props.modeClasses}/>
                     
                 <SideDrawer 
                     closed = {this.closeSideDrawerHandler}
                     open = {this.state.showSideDrawer}
                     authenticated={this.props.authenticated}
-                    diverId={this.props.diverId}/>
+                    diverId={this.props.diverId}
+                    modeToggler={this.props.modeToggler}
+                    modeClasses={this.props.modeClasses}/>
                 
-                <main className = {classes.Content} >
+                <main className = {classes.Content + ' ' + this.props.modeClasses} >
                     {this.props.children}
                 </main>
             </Aux>

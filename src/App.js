@@ -17,7 +17,16 @@ class App extends Component {
   state={
     authenticated: false,
     diverId: null,
-    userName: null
+    userName: null,
+    modeClasses: 'uk-background-default uk-dark' 
+  }
+
+  modeToggleHandler = () => {
+    let newModeClasses = 'uk-background-secondary uk-light';
+    if (this.state.modeClasses === 'uk-background-secondary uk-light') {
+      newModeClasses = 'uk-background-default uk-dark'
+    }
+    this.setState({modeClasses: newModeClasses});
   }
 
   loginHandler = (diverId, userName) => {
@@ -32,36 +41,87 @@ class App extends Component {
 
     return (
       <Layout 
-          authenticated={this.state.authenticated}
-          diverId={this.state.diverId}
-          userName={this.state.userName}>
+        authenticated={this.state.authenticated}
+        diverId={this.state.diverId}
+        userName={this.state.userName}
+        modeClasses={this.state.modeClasses}
+        modeToggler={this.modeToggleHandler}
+      >
 
-          <Switch>
-            
-            <Route exact path='/login'> 
+        <Switch>
+          
+          <Route 
+            exact path='/login'
+            render = {(props) => (
               <Login 
+                {...props}
                 authenticated={this.state.authenticated}
-                loginHandler={this.loginHandler}/>
-            </Route>
-
-            <Route exact path='/logout'> 
+                loginHandler={this.loginHandler}
+                modeClasses={this.state.modeClasses}
+            />
+            )}
+          /> 
+            
+          <Route 
+            exact path='/logout'
+            render = {(props) => (
               <Logout 
-                logoutHandler={this.logoutHandler}/>
-            </Route>
+                {...props}
+                logoutHandler={this.logoutHandler}
+                modeClasses={this.state.modeClasses}/>
+            )} 
+          />
 
-            {this.state.authenticated ? <Route exact path='/dives/:diverId' component={Logbook}/> : null}
-       
-            {this.state.authenticated ? <Route exact path='/add/:diverId' component={LogADive}/> : null}
-       
-            <Route exact path='/about' component={About}/>
+          {this.state.authenticated ? 
+            <Route
+              exact path='/dives/:diverId'
+              render={(props) => (
+                <Logbook 
+                  {...props} 
+                  modeClasses={this.state.modeClasses} 
+                />
+              )}
+            /> 
+          : null}
+      
+          {this.state.authenticated ? 
+            <Route 
+              exact path='/add/:diverId'
+              render={(props) => (
+                <LogADive {...props} modeClasses={this.state.modeClasses}/>
+              )}
+            />
+          : null}
+      
+          <Route 
+            exact path='/about'
+            render={(props) => (
+              <About {...props} modeClasses={this.state.modeClasses}/>
+            )} 
+          />
+            
+          <Route 
+            exact path='/edit/:diveId' 
+            render={(props) => (
+              <EditDive {...props} modeClasses={this.state.modeClasses}/>
+            )}
+          />
+              
+          {this.state.authenticated ? 
+            <Route 
+              exact path='/user'
+              render = {(props) => (
+                <UserAccount 
+                  {...props}
+                  userId={this.state.userId}
+                  modeClasses={this.state.modeClasses}/>
+              )}
+            /> 
+          : null}
 
-            <Route exact path='/edit/:diveId' component={EditDive}/>
+          <Redirect from='/' to={'/dives/'+this.state.diverId}/>
 
-            {this.state.authenticated ? <Route exact path='/user'><UserAccount userId={this.state.userId}/></Route> : null}
-
-            <Redirect from='/' to={'/dives/'+this.state.diverId}/>
-
-          </Switch>
+        </Switch>
       </Layout>
     );
   }

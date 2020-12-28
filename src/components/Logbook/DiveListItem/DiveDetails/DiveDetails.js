@@ -19,8 +19,10 @@ class diveDetails extends Component {
         
         return(
             <Aux >
-                <div className="uk-card uk-card-default uk-card-body uk-animation-slide-top-medium">
-                    <p className="uk-card-title">Dive details</p>
+                <div className={this.props.modeClasses +
+                    " uk-card uk-card-default uk-card-body uk-animation-slide-top-medium"}
+                >
+                    <h4>Dive details</h4>
                     <ul className="uk-list uk-list-collapse uk-list-striped">
                         <li>maximum depth: <strong>{diveDetails.maxDepth}</strong> m</li>
                         <li>average depth: <strong>{diveDetails.avgDepth}</strong> m</li>
@@ -38,8 +40,10 @@ class diveDetails extends Component {
                     </ul>        
                 </div>
 
-                <div className="uk-card uk-card-default uk-card-body uk-animation-slide-top-medium">
-                    <p className="uk-card-title">Equipment</p>
+                <div className={this.props.modeClasses +
+                    " uk-card uk-card-default uk-card-body uk-animation-slide-top-medium"}
+                >
+                    <h4>Equipment</h4>
                     <ul className="uk-list uk-list-collapse uk-list-striped">
                         <li>diving suit: <strong>{diveDetails.divingSuit}</strong></li>
                         <li>gas: <strong>{diveDetails.gas}</strong></li>
@@ -52,8 +56,10 @@ class diveDetails extends Component {
                     </ul>
                 </div>
 
-                <div className="uk-card uk-card-default uk-card-body uk-animation-slide-top-medium">
-                    <p className="uk-card-title">Partners</p>
+                <div className={this.props.modeClasses +
+                    " uk-card uk-card-default uk-card-body uk-animation-slide-top-medium"}
+                >
+                    <h4>Partners</h4>
                     <ul className="uk-list uk-list-collapse uk-list-striped">
                         {partners}
                     </ul>

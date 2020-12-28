@@ -35,17 +35,20 @@ class StatisticsPanel extends Component {
             
             content = (<Aux>
                 
-                <div className="uk-card uk-card-default uk-card-body uk-margin-top uk-align-center"
+                <div className={this.props.modeClasses +
+                    "uk-card uk-card-default uk-card-body uk-margin-top uk-align-center"}
                     uk-scrollspy="cls: uk-animation-slide-left; repeat: true">
                     <p>Number of recorded dives: <strong>{this.state.statistics.numberOfDives}</strong></p>
                 </div>
 
-                <div className="uk-card uk-card-default uk-card-body uk-margin-left uk-margin-top uk-align-center"
+                <div className={this.props.modeClasses +
+                    "uk-card uk-card-default uk-card-body uk-margin-left uk-margin-top uk-align-center"}
                     uk-scrollspy="cls: uk-animation-slide-top; repeat: true">
                     <p> Deepest dive depth: <strong>{this.state.statistics.deepestDiveDepth}</strong> m</p>
                 </div>
 
-                <div className="uk-card uk-card-default uk-card-body uk-margin-left uk-margin-top uk-align-center"
+                <div className={this.props.modeClasses +
+                    "uk-card uk-card-default uk-card-body uk-margin-left uk-margin-top uk-align-center"}
                     uk-scrollspy="cls: uk-animation-slide-right; repeat: true">
                     <p>Longest dive duration: <strong>{this.state.statistics.longestDiveDuration}</strong> min</p>
                 </div>

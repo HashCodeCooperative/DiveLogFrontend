@@ -22,7 +22,9 @@ const toolbar = ( props ) => {
                         mode='toolbar'
                         authenticated={props.authenticated}
                         diverId={props.diverId}
-                        userName={props.userName}/>
+                        userName={props.userName}
+                        modeToggler={props.modeToggler}
+                        modeClasses={props.modeClasses}/>
                 </div>
             </NavbarSticky>
 

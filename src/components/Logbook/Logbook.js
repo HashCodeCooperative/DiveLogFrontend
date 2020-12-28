@@ -31,14 +31,23 @@ class Logbook extends Component {
         let content = <Spinner/>
         if (this.state.dives) {
    
-            const diveList = this.state.dives.map(dive => <DiveListItem key={dive.userDiveId} diveId={dive.userDiveId}/>)
+            const diveList = this.state.dives.map(dive => 
+                <DiveListItem 
+                    key={dive.userDiveId} 
+                    diveId={dive.userDiveId}
+                    modeClasses={this.props.modeClasses}
+                />
+            )
  
             content = (
                 <Aux>
-                    <StatisticsPanel diverId={this.props.match.params.diverId}/>
+                    <StatisticsPanel 
+                        diverId={this.props.match.params.diverId}
+                        modeClasses={this.props.modeClasses}/>
                     {diveList}
                 </Aux>); 
         }
+        
         if (this.state.error) {
             content = <p className='uk-text-danger uk-margin-top uk-align-center'>Something went wrong...</p>
         }

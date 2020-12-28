@@ -28,6 +28,8 @@ const sideDrawer = ( props ) => {
                     authenticated={props.authenticated}
                     closed={props.closed}
                     diverId={props.diverId}
+                    modeToggler={props.modeToggler}
+                    modeClasses={props.modeClasses}
                 />
             </div>
       </Aux>

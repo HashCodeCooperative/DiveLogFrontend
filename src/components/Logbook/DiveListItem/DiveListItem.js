@@ -63,7 +63,9 @@ class DiveList extends Component {
             let icon = "icon: plus-circle";
 
             if (this.state.showDetails) {
-                details = <DiveDetails diveDetails={diveDetails}/>
+                details = <DiveDetails 
+                    diveDetails={diveDetails}
+                    modeClasses={this.props.modeClasses}/>
                 icon = "icon: minus-circle"
             };   
 

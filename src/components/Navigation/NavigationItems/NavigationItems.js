@@ -67,6 +67,24 @@ const NavigationItems = ( props ) => {
             </div>
         );
     };
+
+    let modeText = 'LIGHT MODE';
+    if (props.modeClasses === 'uk-background-default uk-dark') {
+        modeText = 'DARK MODE'
+    }
+    
+    let modeToggleItem = <div className='uk-flex'>
+                            <span
+                                uk-icon='icon: paint-bucket' 
+                                className={linkClasses.join(' ')}
+                                uk-tooltip='toggle dark/light mode'>
+                            </span>
+                        </div>
+
+    if (props.mode==='sidebar') {
+        modeToggleItem = <span>{modeText}</span>
+    } 
+    
                         
 
     return(
@@ -116,10 +134,17 @@ const NavigationItems = ( props ) => {
             </li>
 
             <li>
+                <NavLink onClick={props.modeToggler} to={'/'}>
+                    {modeToggleItem}
+                </NavLink>
+            </li>
+
+            <li>
                 <NavLink onClick={props.closed} to={'/user'}>
                     {userLink}
                 </NavLink>
             </li>
+   
         </ul>
     );
 };
