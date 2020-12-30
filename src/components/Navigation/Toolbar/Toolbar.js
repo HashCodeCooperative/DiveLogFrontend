@@ -7,15 +7,20 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 
 const toolbar = ( props ) => {
 
+    let toolbarcolor = '#f7f7f7';
+    if (props.modeClasses === 'uk-background-secondary uk-light') {
+        toolbarcolor = '#ffc806';
+    }
+
     return(
 
-        <header className={classes.Toolbar + ' uk-background-muted'}>
+        <header className={classes.Toolbar} style={{background: toolbarcolor}}>
             
             <DrawerToggle 
                 clicked={props.drawerToggleClicked}    
             />
             
-            <NavbarSticky options="animation: uk-animation-slide-top; cls-inactive: uk-navbar-transparent uk-light; top: 556;">
+            <NavbarSticky options="animation: uk-animation-slide-top; cls-inactive: uk-navbar-transparent uk-dark; top: 556;">
                 
                 <div className='uk-navbar-top'>
                     <NavigationItems 

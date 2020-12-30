@@ -5,14 +5,10 @@ import classes from './NavigationItems.module.css';
 const NavigationItems = ( props ) => {
 
     let navItemsClasses = null;
-    let linkClasses =[];
-
+    
     if (props.mode === 'toolbar') {
         navItemsClasses = 'uk-navbar-nav uk-iconnav';
-        linkClasses.push(classes.NavigationItem);
-        linkClasses.push(classes.DesktopOnly);
-    } else
-    
+    } else    
     if (props.mode === 'sidebar') {
         navItemsClasses = "uk-nav uk-nav-default";
     }
@@ -23,7 +19,7 @@ const NavigationItems = ( props ) => {
                 <span>SIGN-IN</span> 
                 :
                 <span 
-                    className={linkClasses.join(' ')}
+                    className={classes.DesktopOnly}
                     uk-icon="icon: sign-in"
                     uk-tooltip="sign-in">                     
                 </span>
@@ -38,7 +34,7 @@ const NavigationItems = ( props ) => {
                     <span>SIGN-OUT</span> 
                     :
                     <span 
-                        className={linkClasses.join(' ')}
+                        className={classes.DesktopOnly}
                         uk-icon="icon: sign-out"
                         uk-tooltip="sign-out">                     
                     </span>
@@ -57,12 +53,12 @@ const NavigationItems = ( props ) => {
         userLink = (
             <div className='uk-flex'>
                 <span 
-                    className={linkClasses.join(' ')}
+                    className={classes.DesktopOnly}
                     uk-icon="icon: user"
                     uk-tooltip="user's account">                     
                 </span>
                 <span 
-                    className={linkClasses.join(' ') + ' uk-margin-small-left'}
+                    className={classes.DesktopOnly + ' uk-margin-small-left'}
                     uk-tooltip="user's account">{props.userName}</span>
             </div>
         );
@@ -76,7 +72,7 @@ const NavigationItems = ( props ) => {
     let modeToggleItem = <div className='uk-flex'>
                             <span
                                 uk-icon='icon: paint-bucket' 
-                                className={linkClasses.join(' ')}
+                                className={classes.DesktopOnly}
                                 uk-tooltip='toggle dark/light mode'>
                             </span>
                         </div>
@@ -98,7 +94,7 @@ const NavigationItems = ( props ) => {
                         <span>LOGBOOK</span> 
                         :
                         <span 
-                            className={linkClasses.join(' ')}
+                            className={classes.DesktopOnly}
                             uk-icon="icon: database"
                             uk-tooltip="show the logbook">                     
                         </span>
@@ -111,7 +107,7 @@ const NavigationItems = ( props ) => {
                         <span>ADD A DIVE</span> 
                         :
                         <span 
-                            className={linkClasses.join(' ')}
+                            className={classes.DesktopOnly}
                             uk-icon="icon: plus"
                             uk-tooltip="add a dive">                     
                         </span>
@@ -125,7 +121,7 @@ const NavigationItems = ( props ) => {
                         <span>ABOUT</span> 
                         :
                         <span 
-                            className={linkClasses.join(' ')}
+                            className={classes.DesktopOnly}
                             uk-icon="icon: info"
                             uk-tooltip="about the application">                     
                         </span>
