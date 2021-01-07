@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 // import classes from './Login.module.css';
 import Modal from '../UI/Modal/Modal';
 import Spinner from '../UI/Spinner/Spinner';
-import Aux from '../../hoc/Aux/Aux';
+import Aux from '../../hoc/Auxiliary/Auxiliary';
 
 class Login extends Component {
 

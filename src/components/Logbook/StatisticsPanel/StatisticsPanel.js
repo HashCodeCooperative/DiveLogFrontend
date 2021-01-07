@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from '../../../axios-backend';
 import Spinner from '../../UI/Spinner/Spinner';
-import Aux from '../../../hoc/Aux/Aux';
+import Aux from '../../../hoc/Auxiliary/Auxiliary';
 // import classes from './StatisticsPanel.module.css';
 
 class StatisticsPanel extends Component {

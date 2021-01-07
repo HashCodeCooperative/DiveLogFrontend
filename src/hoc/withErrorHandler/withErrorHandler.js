@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Modal from '../../components/UI/Modal/Modal';
-import Aux from '../Aux/Aux';
+import Aux from '../Auxiliary/Auxiliary';
 import '../../../node_modules/uikit/dist/css/uikit.css';
 //import classes from './withErrorHandler.module.css';
 

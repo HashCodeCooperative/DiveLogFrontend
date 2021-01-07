@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import classes from './Logbook.module.css';
-import Aux from '../../hoc/Aux/Aux';
+import Aux from '../../hoc/Auxiliary/Auxiliary';
 import StatisticsPanel from './StatisticsPanel/StatisticsPanel';
 import DiveListItem from './DiveListItem/DiveListItem';
 import Spinner from '../UI/Spinner/Spinner';

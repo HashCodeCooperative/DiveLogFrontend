@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import DiveDetails from './DiveDetails/DiveDetails';
 import Spinner from '../../UI/Spinner/Spinner';
 import axios from '../../../axios-backend';
-import Aux from '../../../hoc/Aux/Aux';
+import Aux from '../../../hoc/Auxiliary/Auxiliary';
 
 // import classes from './DiveList.module.css';
 
