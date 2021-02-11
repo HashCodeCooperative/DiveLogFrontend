@@ -11,6 +11,8 @@ const NavigationItems = (props) => {
     navItemsClasses = "uk-nav uk-nav-default";
   }
 
+  let onClickHandler = () => {};
+
   let LoginItem = (
     <Link onClick={props.closed} to="/login">
       {props.mode === "sidebar" ? (
@@ -130,9 +132,8 @@ const NavigationItems = (props) => {
         <div
           onClick={() => {
             props.modeToggler();
-            props.closed();
+            props.closed;
           }}
-          to={"/"}
         >
           {modeToggleItem}
         </div>
