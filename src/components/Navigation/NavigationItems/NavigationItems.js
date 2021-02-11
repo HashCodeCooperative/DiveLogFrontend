@@ -63,9 +63,9 @@ const NavigationItems = (props) => {
     );
   }
 
-  let modeText = "LIGHT MODE";
+  let modeText = "RUN LIGHT MODE";
   if (props.modeClasses === "uk-background-default uk-dark") {
-    modeText = "DARK MODE";
+    modeText = "RUN DARK MODE";
   }
 
   let modeToggleItem = (
@@ -127,17 +127,17 @@ const NavigationItems = (props) => {
       </li>
 
       <li>
-
-        <div className={props.checkIfSideDrawerOpen === true ? null : "uk-navbar-item"}
+        <div
+          className={
+            props.checkIfSideDrawerOpen === true ? null : "uk-navbar-item"
+          }
           onClick={() => {
             props.modeToggler();
 
             if (props.checkIfSideDrawerOpen === true) {
               props.closed();
             }
-
           }}
-          
         >
           {modeToggleItem}
         </div>
