@@ -132,8 +132,12 @@ const NavigationItems = (props) => {
         <div
           onClick={() => {
             props.modeToggler();
-            props.closed;
+
+            if (props.checkIfSideDrawerOpen === true) {
+              props.closed();
+            }
           }}
+          className="uk-navbar-item"
         >
           {modeToggleItem}
         </div>
